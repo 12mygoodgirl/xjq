@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#F7F2ED">
+<title>心动类型 · 你到底会喜欢什么样的人</title>
+<meta name="description" content="100 道题，8 种心动原型。找出你真正会被什么样的人吸引。">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<header class="nav" id="nav">
+  <a class="brand" href="#" data-action="home">
+    <span class="brand-mark">◐</span>
+    <span>心动类型<span class="brand-sub">LOVE ARCHETYPE</span></span>
+  </a>
+  <div class="nav-right">
+    <span class="nav-meta">100 题 · 8 种原型 · 约 12 分钟</span>
+    <button class="btn-ghost" id="navUnlock" data-action="go-pay">解锁完整报告</button>
+  </div>
+</header>
+
+<main id="app" role="main"></main>
+
+<footer class="footer">
+  <div>© 2026 心动类型 · 一份关于「你会被谁吸引」的自测</div>
+  <div class="footer-note">本测评为趣味自我探索工具，不构成心理诊断或择偶建议。</div>
+</footer>
+
+<div id="toast" class="toast" aria-live="polite"></div>
+<div id="adminRoot"></div>
+
+<!-- 公开配置（不含任何密钥，会随仓库上传）。
+     部署前只需把 productUrl 改成自己的面包多商品链接。
+     js/pay-config.js 已被 .gitignore 排除，页面不再依赖它；
+     密钥只放 Vercel 环境变量 / 本地 .env.local。 -->
+<script>
+  window.PAY_PUBLIC = {
+    mode: 'auto',              // 本地预览=演示，部署上线=正式
+    provider: 'mbd',           // 'mbd' | 'afdian'
+    productUrl: 'https://mbd.pub/o/REPLACE_WITH_YOUR_PRODUCT',
+    price: 19.9,
+    claimApi: '/api/claim'
+  };
+</script>
+<script src="js/questions.js"></script>
+<script src="js/types.js"></script>
+<script src="js/app.js"></script>
+</body>
+</html>

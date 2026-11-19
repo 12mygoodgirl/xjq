@@ -1,0 +1,20 @@
+{
+  "_comment": "把下面各项设为环境变量后运行 node server/server.js。API 密钥与回调密钥只能放服务端，绝不能写进前端代码。",
+  "_vercel_note": "部署到 Vercel 时不使用本目录的常驻服务：服务端是 api/claim.js，环境变量在 Vercel 项目后台设置（UNLOCK_SECRET / PAY_PROVIDER / MIN_AMOUNT / MBD_DEV_KEY 或 AFDIAN_USER_ID + AFDIAN_TOKEN）。server/ 已被 .vercelignore 排除。",
+  "_never_needed": ["银行卡号", "支付密码", "短信验证码", "身份证照片", "网银登录信息"],
+  "_card_note": "银行卡号不是网站配置项。它只是收款平台后台里的结算账户，由经营者本人在平台后台填写；网站全程不接触银行卡。",
+  "PORT": 8787,
+  "WEBHOOK_SECRET": "换成收款平台给你的回调签名密钥",
+  "ADMIN_TOKEN": "换成自定义的后台查询令牌",
+  "ALLOW_ORIGIN": "https://你的已备案域名",
+  "ENABLE_DEMO_NOTIFY": true,
+  "PAY_API_URL": "https://收款平台/下单接口",
+  "PAY_API_KEY": "只放服务端环境变量",
+  "MERCHANT_ID": "平台商户号",
+  "NOTIFY_URL": "https://你的已备案域名/api/notify",
+  "_channels": [
+    "微信支付 / 支付宝商户：需营业执照或个体户资质 + 已备案域名 + HTTPS，结算到对公或法人银行卡",
+    "个人可注册的知识付费 / 发卡平台（爱发电、面包多、XorPay 等）：支持付款回调，钱提现到个人银行卡",
+    "个人收款码没有回调能力，无法自动发货，不适用于本站"
+  ]
+}

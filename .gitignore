@@ -1,0 +1,23 @@
+# 密钥与本地环境：真正装着开发者 Key 的是 .env.local，绝不上传
+.env
+.env.*
+!.env.example
+
+# 按仓库主要求排除：本地支付配置文件（线上公开配置在 index.html 内联段）
+# 注意：此文件本身不含密钥，只是商品链接 / 价格 / 接口路径
+js/pay-config.js
+
+# Vercel / Node
+.vercel/
+node_modules/
+*.log
+
+# 带 AI 水印的原图与处理日志
+assets/cover.png
+assets/type-*.png
+erase-logs/
+processed_image_*.png
+mbd-doc-tmp.md
+
+# 本地收款服务（Vercel 部署不用）
+server/data/
